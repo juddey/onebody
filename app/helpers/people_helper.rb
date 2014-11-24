@@ -116,4 +116,20 @@ module PeopleHelper
     return unless person.twitter.present?
     "https://twitter.com/#{person.twitter}"
   end
+
+  def format_updated_dates(person)
+    [person.last_updated.to_s(:date), person.last_updated.to_s(:time)].join(' ')
+  end
+
+  def format_login_dates(person)
+    [Time.parse(person
+      .last_login
+      .fetch(:last_login))
+      .to_s(:date),
+     Time.parse(person
+       .last_login
+       .fetch(:last_login))
+       .to_s(:time)
+    ].join(' ')
+  end
 end

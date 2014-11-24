@@ -26,6 +26,8 @@ en:
         birthday: "Birthday"
         anniversary: "Wedding Anniversary"
         social: "Social"
+        last_login: "Last Login"
+        last_updated: "Last Updated"
 
     edit:
       about: "About"

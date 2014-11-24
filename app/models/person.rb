@@ -17,6 +17,7 @@ class Person < ActiveRecord::Base
   include Concerns::Person::Relationships
   include Concerns::Person::Memberships
   include Concerns::DateWriter
+  include Concerns::Person::Audit
 
   acts_as_list scope: :family
 
@@ -96,6 +97,12 @@ class Person < ActiveRecord::Base
   validates_attachment_size :photo, less_than: PAPERCLIP_PHOTO_MAX_SIZE
   validates_attachment_content_type :photo, content_type: PAPERCLIP_PHOTO_CONTENT_TYPES
   validate :validate_email_unique
+
+  before_save :update_tracked_fields
+
+  def update_tracked_fields
+    self.last_updated = DateTime.now if (TRACKING_COLS & changes.keys).present?
+  end
 
   def validate_email_unique
     return if email.blank? || deleted?

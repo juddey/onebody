@@ -52,3 +52,10 @@
             = link_to(@person.facebook_url, target: '_blank') do
               = icon 'fa fa-facebook'
               = simple_url(@person.facebook_url, www: false)
+  %tr
+    %td= t('people.show.details.last_updated')
+    %td= format_updated_dates(@person)
+  %tr
+    %td= t('people.show.details.last_login')
+    %td= format_login_dates(@person)
+
