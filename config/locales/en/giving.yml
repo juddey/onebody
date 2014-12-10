@@ -1,0 +1,68 @@
+en:
+  giving:
+
+    batch:
+      title: "Batches"
+      fields:
+        name: "Name"
+        opening_date: Opening Date
+        deposit_date: Deposit Date
+        amount: "Amount"
+        status:
+          label: "Status"
+          open: "Open"
+          closed: "Closed"
+        batch_type:
+          label: "Type"
+          online: "Online"
+          manual: "Manual"
+        comments: "Comments"
+      new:
+        title: New Batch
+        notice: "Batch was successfully created."
+      edit:
+        title: Edit Batch
+        notice: "Batch was sucessfully updated"
+      destroy: "Batch was successfully destroyed."
+      validation:
+        deposit_date: "Deposit date cannot be before Opening Date."
+        status: "Please enter Open or Closed."
+        type: "Please enter online or manual."
+
+    button:
+      add: "Add new"
+      show: "Show"
+      edit: "Edit"
+      delete: "Delete"
+    dashboard:
+      heading: "Giving Dashboard"
+      batch:
+        title: "Batches"
+        intro: "Define parameters for batch processing."
+        button: "Batch Settings"
+      funds:
+        title: "Funds"
+        intro: "Setup Funds, and something else for funds goes here."
+        button: "Administer Funds"
+    funds:
+      title: "Funds"
+      fields:
+        name: "Name"
+        display_name: "Display Name"
+        active: "Active"
+        online: "Online"
+        default_fund: "Default Fund"
+        taxed: "Taxable"
+        active_from: "Active From"
+        active_to: "Active To"
+        bank_account: "Bank Account"
+        gl_account: "General Ledger Account"
+      new:
+        title: New Fund
+        notice: "Fund was successfully created."
+      edit:
+        title: Edit Fund
+        notice: "Fund was sucessfully updated"
+      destroy: "Fund was successfully destroyed."
+      validation:
+        active_to: "Active To cannot be before Active From."

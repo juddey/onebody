@@ -107,7 +107,17 @@
             = link_to administration_checkin_dashboard_path, class: 'btn btn-info' do
               = icon 'fa fa-check-square-o'
               = t('admin.checkin.button')
-
+  - if @logged_in.admin?(:manage_giving) or @logged_in.admin?(:record_giving)
+    .floating-box
+      .box.box-info.normalize-height
+        .box-header
+          %h3.box-title= t('admin.giving.heading')
+        .box-body
+          %p= t('admin.giving.intro')
+          %p
+            = link_to giving_path, class: 'btn btn-info' do
+              = icon 'fa fa-gift'
+              = t('admin.giving.button')
   - if @logged_in.admin?(:manage_access)
     .floating-box
       .box.box-warning.normalize-height

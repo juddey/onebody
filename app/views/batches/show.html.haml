@@ -1,0 +1,19 @@
+- @title = @batches.name
+%p
+  %b=t('giving.batch.fields.opening_date')
+  %p= @batches.opening_date.to_s(:date)
+%p
+  %b=t('giving.batch.fields.deposit_date')
+  %p= @batches.deposit_date.to_s(:date) if @batches.deposit_date.present?
+%p
+  %b=t('giving.batch.fields.amount')
+  %p= number_with_precision(@batches.amount, precision: 2)
+%p
+  %b=t('giving.batch.fields.status.label')
+  %p= @batches.status
+%p
+  %b=t('giving.batch.fields.batch_type.label')
+  %p= @batches.batch_type
+%p
+  %b=t('giving.batch.fields.comments')
+  %p= @batches.comments

@@ -19,6 +19,9 @@ en:
       advanced: "Advanced Search"
       new_person: "New Person"
     documents: "Documents"
+    giving:
+      dash: "Giving"
+      fund: "Funds"
     groups: "Groups"
     groups_sub:
       edit: "Edit Group"

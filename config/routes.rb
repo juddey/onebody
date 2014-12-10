@@ -216,6 +216,11 @@ OneBody::Application.routes.draw do
     end
   end
 
+  get '/giving', to: 'giving/dashboards#show'
+  scope '/giving' do
+    resources :funds, :batches, :batch_lines
+  end
+
   namespace :checkin do
     root to: 'interfaces#show'
     resource :interface

@@ -1,0 +1,25 @@
+%h1 Listing batch_lines
+
+%table
+  %tr
+    %th Amount
+    %th Person
+    %th Tender
+    %th Fund
+    %th
+    %th
+    %th
+
+  - @batch_lines.each do |batch_line|
+    %tr
+      %td= batch_line.amount
+      %td= batch_line.person
+      %td= batch_line.tender
+      %td= batch_line.fund
+      %td= link_to 'Show', batch_line
+      %td= link_to 'Edit', edit_batch_line_path(batch_line)
+      %td= link_to 'Destroy', batch_line, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Batch line', new_batch_line_path

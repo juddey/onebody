@@ -27,6 +27,7 @@ class BreadcrumbPresenter
     document_crumb
     task_crumb
     reports_crumb
+    giving_crumb
   end
 
   private
@@ -184,6 +185,17 @@ class BreadcrumbPresenter
       crumbs << ['fa fa-table', t('nav.report'), admin_reports_path]
     end
   end
+
+  def giving_crumb
+    if %w(funds batches giving/dashboards).include?(@controller)
+      crumbs << ['fa fa-gear', t('nav.admin'), admin_path]
+      crumbs << ['fa fa-gift', t('nav.giving.dash'), giving_path]
+    end
+    if @controller == 'funds'
+      crumbs << ['fa fa-bank', t('nav.giving.fund'), funds_path]
+    end
+  end
+
 
   def t(*args)
     I18n.t(*args)

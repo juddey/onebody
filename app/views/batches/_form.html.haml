@@ -1,0 +1,27 @@
+= form_for @batches do |form|
+
+  = error_messages_for(form)
+
+  .form-group
+    = form.label :name, t('giving.batch.fields.name')
+    = form.text_field :name, class: 'form-control'
+  .form-group
+    = form.label :opening_date, t('giving.batch.fields.opening_date')
+    = format_via_datepicker form, :opening_date
+  .form-group
+    = form.label :deposit_date, t('giving.batch.fields.deposit_date')
+    = format_via_datepicker form, :deposit_date
+  .form-group
+    = form.label :amount, t('giving.batch.fields.amount')
+    = form.text_field :amount, class: 'form-control', value: number_with_precision(@batches.amount, precision: 2), placeholder: "Enter Amount"
+  .form-group
+    = form.label :status, t('giving.batch.fields.status')
+    = form.select :status, [['', nil], [t('giving.batch.fields.status.open'), 'Open'], [t('giving.batch.fields.status.closed'), 'Closed']], {}, class: 'form-control'
+  .form-group
+    = form.label :batch_type, t('giving.batch.fields.batch_type.label')
+    = form.select :batch_type, [['', nil], [t('giving.batch.fields.batch_type.manual'), 'Manual'], [t('giving.batch.fields.batch_type.online'), 'Online']], {}, class: 'form-control'
+  .form-group
+    = form.label :batch_type, t('giving.batch.fields.comments')
+    = form.text_area :comments, rows: 5, cols: 80, class: 'form-control'
+  .form-group
+    = button_tag t('save_changes'), class: 'btn btn-success'

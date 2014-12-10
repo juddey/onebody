@@ -102,6 +102,9 @@ Features:
   Small Group Size:
     format: string
     value: 75
+  Giving:
+    format: boolean
+    value: false
 Services:
   Analytics:
     format: string
@@ -213,3 +216,16 @@ Privacy:
   Hide Contact Details in Messages:
     format: boolean
     value: true
+Giving:
+  Fin Year End Month:
+    format: string
+    value: 03
+  Fin Year End Day:
+    format: string
+    value: 31
+  Issue Certs:
+    format: list
+    value: |
+      Yearly
+      Half-Yearly
+      Quarterly

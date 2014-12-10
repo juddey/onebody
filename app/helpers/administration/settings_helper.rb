@@ -47,5 +47,8 @@ module Administration::SettingsHelper
       I18n.t('description', scope: ['admin.settings', setting.section, setting.name])
     end
   end
-  
+
+  def fin_month_names
+    (1..12).map {|m| [Date::MONTHNAMES[m], m]}
+  end
 end

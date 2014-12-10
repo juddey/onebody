@@ -160,6 +160,10 @@ en:
               blank: The attendance record must specify a date and time.
             group_id:
               blank: The attendance record must be associated with a group.
+        batch:
+          attributes:
+            amount:
+              greater_than: Amount must be greater than zero.
         document:
           attributes:
             file:
@@ -227,6 +231,16 @@ en:
             person_id:
               blank: This friendship request must be associated with a person.
               taken: This friendship request already exits.
+        fund:
+          attributes:
+            name:
+              too_long: Fund Name needs to be 100 characters or less.
+              blank: A fund must have a name.
+            display_name:
+              too_long: Display Names for Funds are limited to 10 characters.
+              blank: A fund must have a display name.
+            active_from:
+              blank: You must enter an active from date.
         group:
           attributes:
             address:

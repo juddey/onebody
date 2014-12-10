@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Amount:
+  = @batch_line.amount
+%p
+  %b Person:
+  = @batch_line.person
+%p
+  %b Tender:
+  = @batch_line.tender
+%p
+  %b Fund:
+  = @batch_line.fund
+
+= link_to 'Edit', edit_batch_line_path(@batch_line)
+\|
+= link_to 'Back', batch_lines_path

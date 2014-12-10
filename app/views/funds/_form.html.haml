@@ -1,0 +1,34 @@
+= form_for @fund do |form|
+
+  = error_messages_for(form)
+
+  .form-group
+    = form.label :active, t('giving.funds.fields.active')
+    = form.check_box :active, class: 'form-control checkbox-inline'
+    = form.label :online, t('giving.funds.fields.online')
+    = form.check_box :online, class: 'form-control checkbox-inline'
+    = form.label :default_fund, t('giving.funds.fields.default_fund')
+    = form.check_box :default_fund, class: 'form-control checkbox-inline'
+    = form.label :taxed, t('giving.funds.fields.taxed')
+    = form.check_box :taxed, class: 'form-control checkbox-inline'
+
+  .form-group
+    = form.label :name, t('giving.funds.fields.name')
+    = form.text_field :name, class: 'form-control'
+  .form-group
+    = form.label :display_name, t('giving.funds.fields.display_name')
+    = form.text_field :display_name, class: 'form-control'
+  .form-group
+    = form.label :active_from, t('giving.funds.fields.active_from')
+    = format_via_datepicker form, :active_from
+  .form-group
+    = form.label :active_to, t('giving.funds.fields.active_to')
+    = format_via_datepicker form, :active_to
+  .form-group
+    = form.label :bank_account, t('giving.funds.fields.bank_account')
+    = form.text_field :bank_account, class: 'form-control'
+  .form-group
+    = form.label :gl_account, t('giving.funds.fields.gl_account')
+    = form.text_field :gl_account, class: 'form-control'
+  .form-group
+    = button_tag t('save_changes'), class: 'btn btn-success'

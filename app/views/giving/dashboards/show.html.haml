@@ -1,0 +1,24 @@
+- @title = t('giving.dashboard.heading')
+
+.floating-boxes.normalize-heights
+  - if @logged_in.admin?(:manage_giving)
+    .floating-box
+      .box.box-info.normalize-height
+        .box-header
+          %h3.box-title= t('giving.dashboard.funds.title')
+        .box-body
+          %p= t('giving.dashboard.funds.intro')
+          %p
+            = link_to funds_path, class: 'btn btn-info' do
+              = icon 'fa fa-bank'
+              = t('giving.dashboard.funds.button')
+    .floating-box
+      .box.box-info.normalize-height
+        .box-header
+          %h3.box-title= t('giving.dashboard.batch.title')
+        .box-body
+          %p= t('giving.dashboard.batch.intro')
+          %p
+            = link_to batches_path, class: 'btn btn-info' do
+              = icon 'fa fa-exchange'
+              = t('giving.dashboard.batch.button')

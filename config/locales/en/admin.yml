@@ -64,7 +64,12 @@ en:
         intro: "The results of your search are displayed below."
       undelete:
         button: "Undelete Selected People"
-
+    giving:
+      heading: "Giving"
+      intro: "Manage Giving, administer batches, and setup funds."
+      button: "Giving Dashboard"
+      yes: "Yes"
+      no: "No"
     membership_requests:
       count:
         one: "%{count} request"
@@ -210,6 +215,14 @@ en:
         title: Manage Reports
         about: "Create, Edit and Delete Custom Reports."
         order: 19
+      manage_giving:
+        title: Manage Giving
+        about: "Manage all aspects of Giving, including configuring giving options."
+        order: 20
+      record_giving:
+        title: Create Giving Batches
+        about: "Create batches for recording giving amounts "
+        order: 21
     rest_api_information: To use the REST API with Ruby, you might do this
     settings:
       heading: "Site Settings"
@@ -395,6 +408,9 @@ en:
         Business Directory:
           name: "Business Directory"
           description: If enabled, users can add business information to be listed in a church business directory.
+        Giving:
+          name: "Giving"
+          description: "Select to enable Giving features, and optionally, online giving."
         Small Group Size:
           name: 'Max size of a "small group"'
           description: 'People in groups with this many members or fewer are considered in a "small group" together, and can easily share content with one another via the homepage.'
@@ -449,6 +465,13 @@ en:
         heading: "Advanced"
         intro: "If settings aren't getting reloaded, click the button below to force reload."
         mailgun: "Click the button below to create a catch all route on your mailgun account."
+      Giving:
+        Fin Year End Month:
+          name: "Financial Year End Month"
+          description: "Enter the month your financial year ends."
+        Fin Year End Day:
+          name: "Financial Year End Day"
+          description: "Enter the day your financial year ends."
       contact_automated_email_about: "These email addresses are sent email when certain things happen on the site. You can set them all to the same address or to different ones, depending on separation of duties in your community."
       contact_community_info_about: "Enter contact information for your church or community office, where people can contact administrative staff."
       contact_heading: Contact
@@ -458,6 +481,7 @@ en:
       formats_heading: Formats
       formats_date_about_html: "Enter your own date and time formats to match your part of the world. See <a href=\"/date_formatting_options.txt\" target=\"_new\">here</a> for formatting options."
       formats_phone_about: "Specify phone formatting with 'd', e.g. ddd-ddd-dddd or (dd) dddd-dddd, depending on your locale."
+      giving_heading: Giving
       locale_heading: Locale
       mailgun: Create Catch All Route on Mailgun
       mailgun_message: "Use this to create a catch all route on your host/domain with mailgun to receive email messages."

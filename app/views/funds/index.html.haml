@@ -1,0 +1,30 @@
+- @title = t('giving.funds.title')
+
+.row
+  .col-xs-12
+    .box
+      %table.table.table-hover
+        %tr
+          %th=t('giving.funds.fields.name')
+          %th=t('giving.funds.fields.active')
+          %th=t('giving.funds.fields.active_from')
+          %th=t('giving.funds.fields.active_to')
+        %tbody
+          - @fund.each do |fund|
+            %tr
+              %td= fund.name
+              %td= check_box_tag :active, true, fund.active, disabled: true, class: 'checkbox'
+              %td= fund.active_from.to_s(:date)
+              %td= fund.active_to.to_s(:date) if fund.active_to.present?
+              %td.actions
+                = link_to edit_fund_path(fund), class: 'btn btn-xs btn-info' do
+                  = icon 'fa fa-pencil'
+                  = t('giving.button.edit')
+                = link_to fund, data: { method: 'delete', confirm: t('are_you_sure') }, class: 'btn btn-xs btn-danger' do
+                  = icon 'fa fa-trash-o'
+                  = t('giving.button.delete')
+          %tr
+            %td
+              = link_to new_fund_path, class: 'btn btn-success' do
+                = icon 'fa fa-plus-circle'
+                = t('giving.button.add')
