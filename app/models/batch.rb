@@ -12,12 +12,10 @@ class Batch < ActiveRecord::Base
   validates :amount, numericality: { greater_than: 0 }
   validates :status,
             allow_nil: false,
-            inclusion: { in: %w(Open Closed),
-                         message: I18n.t('giving.batch.validation.status') }
+            inclusion: { in: %w(Open Closed) }
   validates :batch_type,
             allow_nil: false,
-            inclusion: { in: %w(Online Manual),
-                         message: I18n.t('giving.batch.validation.type') }
+            inclusion: { in: %w(Online Manual) }
 
   validate :opening_date_validator
 

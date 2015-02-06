@@ -164,6 +164,16 @@ en:
           attributes:
             amount:
               greater_than: Amount must be greater than zero.
+            name:
+              blank: The name can't be blank.
+            amount:
+              not_a_number: Please enter a valid amount.
+            status:
+              inclusion: Please enter Open or Closed.
+            batch_type:
+              inclusion: Please enter online or manual.
+            opening_date:
+              blank: Please enter a valid opening date.
         document:
           attributes:
             file:

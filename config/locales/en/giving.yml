@@ -26,8 +26,6 @@ en:
       destroy: "Batch was successfully destroyed."
       validation:
         deposit_date: "Deposit date cannot be before Opening Date."
-        status: "Please enter Open or Closed."
-        type: "Please enter online or manual."
 
     button:
       add: "Add new"
