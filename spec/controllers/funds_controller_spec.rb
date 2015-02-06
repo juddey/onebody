@@ -1,6 +1,6 @@
-require_relative '../spec_helper'
+require_relative '../rails_helper'
 
-describe FundsController do
+describe FundsController, type: :controller do
 
   before do
     @user = FactoryGirl.create(:person)
@@ -66,7 +66,7 @@ describe FundsController do
       post :destroy, { id: @fund.id }, logged_in_id: @user.id
     end
 
-    it 'should delete the custom report' do
+    it 'should delete the fund' do
       expect { @fund.reload }
         .to raise_error(ActiveRecord::RecordNotFound)
     end
