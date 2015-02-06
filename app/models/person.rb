@@ -37,6 +37,7 @@ class Person < ActiveRecord::Base
   has_many :generated_files
   has_many :tasks
   belongs_to :site
+  has_many :batch_lines
 
   scope_by_site_id
 

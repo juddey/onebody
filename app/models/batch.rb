@@ -5,6 +5,8 @@ class Batch < ActiveRecord::Base
   belongs_to :site
   scope_by_site_id
 
+  has_many :batch_lines
+
   validates :name, presence: true, length: { maximum: 30 }
   validates :opening_date, presence: true
   validates :amount, numericality: { greater_than: 0 }
